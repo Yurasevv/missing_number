@@ -7,6 +7,7 @@ public class MissingNumberFinder {
 
     }
 
+    // Сложность O(Nlog(N) + M(log(M)), так как используется сортировка + поиск
     public static int findMissingNumberUsingSearch(int[] arr) {
         // Сортируем массив
         Arrays.sort(arr);
@@ -22,6 +23,7 @@ public class MissingNumberFinder {
         return arr[arr.length - 1] + 1;
     }
 
+    // Линейная по времени и константная по памяти
     public static int findMissingNumberUsingSum(int[] arr) {
         int n = arr.length;
         // Рассчитываем ожидаемую сумму последовательности от 0 до N
@@ -37,6 +39,7 @@ public class MissingNumberFinder {
         return expectedSum - actualSum;
     }
 
+    // Линейная по времени и константная по памяти
     public static int findMissingNumberUsingXOR(int[] arr) {
         int n = arr.length;
         int xorArray = 0;
