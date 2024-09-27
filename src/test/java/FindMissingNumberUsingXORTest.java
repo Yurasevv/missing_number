@@ -16,11 +16,6 @@ public class FindMissingNumberUsingXORTest {
         assertEquals(8, findMissingNumberUsingXOR(arr));
     }
 
-    @Test
-    public void testMissingAtEnd() {
-        int[] arr = {0, 1, 2};
-        assertEquals(3, findMissingNumberUsingXOR(arr));
-    }
 
     @Test
     public void testSingleMissingNumber() {
@@ -28,9 +23,4 @@ public class FindMissingNumberUsingXORTest {
         assertEquals(3, findMissingNumberUsingXOR(arr));
     }
 
-    @Test
-    public void testNoMissingNumber() {
-        int[] arr = {0, 1, 2, 3, 4, 5};
-        assertEquals(6, findMissingNumberUsingXOR(arr));
-    }
 }

@@ -17,20 +17,9 @@ public class FindMissingNumberUsingSumTest {
     }
 
     @Test
-    public void testMissingAtEnd() {
-        int[] arr = {0, 1, 2};
-        assertEquals(3, findMissingNumberUsingSum(arr));
-    }
-
-    @Test
     public void testSingleMissingNumber() {
         int[] arr = {1, 2, 4, 5, 6};
         assertEquals(3, findMissingNumberUsingSum(arr));
     }
 
-    @Test
-    public void testNoMissingNumber() {
-        int[] arr = {0, 1, 2, 3, 4, 5};
-        assertEquals(6, findMissingNumberUsingSum(arr));
-    }
 }

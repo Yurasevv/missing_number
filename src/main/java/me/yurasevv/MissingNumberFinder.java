@@ -23,27 +23,49 @@ public class MissingNumberFinder {
         return arr[arr.length - 1] + 1;
     }
 
-    // Линейная по времени и константная по памяти
     public static int findMissingNumberUsingSum(int[] arr) {
-        int n = arr.length;
-        // Рассчитываем ожидаемую сумму последовательности от 0 до N
-        int expectedSum = (n * (n + 1)) / 2;
+        int min = arr[0];
+        int max = arr[0];
 
-        // Рассчитываем фактическую сумму элементов массива
+        // Найдем минимальное и максимальное значения в массиве
+        for (int num : arr) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        // Рассчитаем ожидаемую сумму для последовательности от min до max
+        int expectedSum = (max * (max + 1)) / 2 - (min * (min - 1)) / 2;
+
+        // Рассчитаем фактическую сумму элементов массива
         int actualSum = 0;
         for (int num : arr) {
             actualSum += num;
         }
 
-        // Разница между ожидаемой и фактической суммой — это пропущенное число
+        // Пропущенное число — разница между ожидаемой и фактической суммой
         return expectedSum - actualSum;
     }
 
-    // Линейная по времени и константная по памяти
     public static int findMissingNumberUsingXOR(int[] arr) {
         int n = arr.length;
         int xorArray = 0;
         int xorFull = 0;
+        int min = arr[0];
+        int max = arr[0];
+
+        // Найдем минимальное и максимальное значения в массиве
+        for (int num : arr) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
 
         // XOR всех элементов массива
         for (int num : arr) {
@@ -51,7 +73,7 @@ public class MissingNumberFinder {
         }
 
         // XOR всех чисел от 0 до N
-        for (int i = 0; i <= n; i++) {
+        for (int i = min; i <= max; i++) {
             xorFull ^= i;
         }
 

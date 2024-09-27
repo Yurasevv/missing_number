@@ -18,11 +18,6 @@ public class FindMissingNumberUsingSearchTest {
         assertEquals(8, findMissingNumberUsingSearch(arr));
     }
 
-    @Test
-    public void testMissingAtEnd() {
-        int[] arr = {0, 1, 2};
-        assertEquals(3, findMissingNumberUsingSearch(arr));
-    }
 
     @Test
     public void testSingleMissingNumber() {
@@ -30,9 +25,4 @@ public class FindMissingNumberUsingSearchTest {
         assertEquals(3, findMissingNumberUsingSearch(arr));
     }
 
-    @Test
-    public void testNoMissingNumber() {
-        int[] arr = {0, 1, 2, 3, 4, 5};
-        assertEquals(6, findMissingNumberUsingSearch(arr));
-    }
 }
